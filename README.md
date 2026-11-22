@@ -4,7 +4,7 @@ A RESTful backend service built with **Node.js**, **Express.js**, and **MongoDB*
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 - **Node.js** - Server-side JavaScript runtime
 - **Express.js** - Web application framework for routing and middleware
@@ -36,4 +36,12 @@ inventory-management-system/
 ```
 
 ---
-
+## Parameters used in the schema
+ -name
+ -productCode
+ -category
+ -price
+ -quantity
+ -reorder
+ -supplier
+ 

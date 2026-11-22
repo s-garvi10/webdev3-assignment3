@@ -31,7 +31,7 @@ const productSchema = new mongoose.Schema(
       min: [0, 'Quantity cannot be negative'],
       validate: isInteger
     },
-    reorderLevel: {
+    reorder: {
       type: Number,
       required: [true, 'Reorder level is required'],
       min: [0, 'Reorder level cannot be negative'],
@@ -55,11 +55,11 @@ productSchema.virtual('stockValue').get(function () {
 });
  
 productSchema.virtual('isLowStock').get(function () {
-  return this.quantity <= this.reorderLevel;
+  return this.quantity <= this.reorder;
 });
  
 productSchema.statics.findLowStock = function () {
-  return this.find({ $expr: { $lte: ['$quantity', '$reorderLevel'] } });
+  return this.find({ $expr: { $lte: ['$quantity', '$reorder'] } });
 };
  
 module.exports = mongoose.model('Product', productSchema);
