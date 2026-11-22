@@ -37,11 +37,11 @@ inventory-management-system/
 
 ---
 ## Parameters used in the schema
- -name
- -productCode
- -category
- -price
- -quantity
- -reorder
- -supplier
- 
+
+- name
+- productCode
+- category
+- price
+- quantity
+- reorderLevel
+- supplier
