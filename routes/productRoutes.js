@@ -19,3 +19,4 @@ router.route('/')
   .get(getProducts)
   .post(validateProductInput, createProduct);
 
+module.exports = router;
