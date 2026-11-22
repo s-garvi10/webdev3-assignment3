@@ -9,9 +9,13 @@ const errorHandler = (err, req, res, next) => {
 
   if (err.code === 11000) {
     statusCode = 400;
-    message = `Duplicate value entered: ${Object.keys(err.keyValue)} already exists.`;
+    message = `Duplicate field value entered: ${Object.keys(err.keyValue)} already exists.`;
   }
 
+  if (err.name === 'ValidationError') {
+    statusCode = 400;
+    message = Object.values(err.errors).map(val => val.message).join(', ');
+  }
 
   res.status(statusCode).json({
     success: false,

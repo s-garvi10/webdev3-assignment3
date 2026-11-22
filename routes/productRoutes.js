@@ -19,4 +19,11 @@ router.route('/')
   .get(getProducts)
   .post(validateProductInput, createProduct);
 
+router.route('/:id')
+  .get(getProductById)
+  .put(updateProduct)
+  .delete(deleteProduct);
+
+router.patch('/:id/stock', updateStock);
+
 module.exports = router;
